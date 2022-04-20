@@ -1,6 +1,7 @@
-
 from typing import List
-class Product():
+
+
+class Product:
     name: str
     price: float
 
@@ -10,20 +11,31 @@ class Product():
 
 
 class Basket:
+
     def __init__(self):
         self.basket: List[Product] = []
 
     def add(self, product: Product):
         self.basket.append(product)
-        return 'мы добавили продукт'
+        return 'add'
 
     def remove(self, product: Product):
         self.basket.remove(product)
-        return 'мы удалили продукт'
+        return 'remove'
 
     def count_sum(self):
-        sums = 0
+        summary = 0
         for i in range(0, len(self.basket)):
-            sums += self.basket[i].price
-        return sums
-        return 'мы посчитали цену'
+            summary += self.basket[i].price
+        return summary
+
+
+milk = Product('milk', 50.0)
+bread = Product('bread', 50.0)
+cookies = Product('cookies', 100.0)
+
+# basket1 = Basket()
+# print(basket1.add(milk))
+# print(basket1.add(bread))
+# print(basket1.add(cookies))
+# print(basket1.count_sum())
